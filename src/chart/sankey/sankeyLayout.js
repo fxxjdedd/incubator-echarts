@@ -401,9 +401,6 @@ function resolveCollisions(nodesByBreadth, nodeGap, height, width, orient) {
 
         if (orient === 'vertical') {
             var nodeX;
-            nodes.sort(function (a, b) {
-                return a.getLayout().x - b.getLayout().x;
-            });
             for (i = 0; i < n; i++) {
                 node = nodes[i];
                 dy = y0 - node.getLayout().x;
@@ -432,9 +429,6 @@ function resolveCollisions(nodesByBreadth, nodeGap, height, width, orient) {
         }
         else {
             var nodeY;
-            nodes.sort(function (a, b) {
-                return a.getLayout().y - b.getLayout().y;
-            });
             for (i = 0; i < n; i++) {
                 node = nodes[i];
                 dy = y0 - node.getLayout().y;
