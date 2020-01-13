@@ -17,7 +17,7 @@
 * under the License.
 */
 
-import {retrieve, defaults, extend, each, map} from 'zrender/src/core/util';
+import {retrieve, defaults, extend, each} from 'zrender/src/core/util';
 import * as formatUtil from '../../util/format';
 import * as graphic from '../../util/graphic';
 import Model from '../../model/Model';
@@ -628,7 +628,7 @@ function buildAxisMajorTicks(axisBuilder, axisModel, opt) {
         }
     ), 'ticks');
 
-    for (let i = 0; i < ticksEls.length; i++) {
+    for (var i = 0; i < ticksEls.length; i++) {
         axisBuilder.group.add(ticksEls[i]);
     }
 
@@ -664,9 +664,9 @@ function buildAxisMinorTicks(axisBuilder, axisModel, opt) {
 
     for (var i = 0; i < minorTicksCoords.length; i++) {
         var minorTicksEls = createTicks(
-            minorTicksCoords[i], axisBuilder._transform, tickEndCoord, minorTickLineStyle, 'minorticks_' + i,
+            minorTicksCoords[i], axisBuilder._transform, tickEndCoord, minorTickLineStyle, 'minorticks_' + i
         );
-        for (let k = 0; k < minorTicksEls.length; k++) {
+        for (var k = 0; k < minorTicksEls.length; k++) {
             axisBuilder.group.add(minorTicksEls[k]);
         }
     }
